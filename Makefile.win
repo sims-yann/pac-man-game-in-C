@@ -1,0 +1,29 @@
+# Project: pac_boy
+# Makefile created by Dev-C++ 6.7.5
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = pac_boy.o
+LINKOBJ  = pac_boy.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -L"C:/Users/SKY/Documents/SDL/SDL2_ttf-devel-2.22.0-mingw/SDL2_ttf-2.22.0/x86_64-w64-mingw32/lib" -L"C:/Users/SKY/Documents/SDL/SDL2_mixer-devel-2.8.0-mingw/SDL2_mixer-2.8.0/x86_64-w64-mingw32/lib" -L"C:/Users/SKY/Documents/SDL/SDL2_image-devel-2.8.2-mingw/SDL2_image-2.8.2/x86_64-w64-mingw32/lib" -L"C:/Users/SKY/Documents/SDL/SDL2/SDL2-2.30.1/x86_64-w64-mingw32/lib" -s -L"C:/Users/SKY/Documents/GitHub/Project pacman/SDL/SDL2-devel-2.30.1-mingw/SDL2-2.30.1/x86_64-w64-mingw32/lib" -L"C:/Users/SKY/Documents/GitHub/Project pacman/SDL/SDL2_ttf-devel-2.22.0-mingw/SDL2_ttf-2.22.0/x86_64-w64-mingw32/lib" -L"C:/Users/SKY/Documents/GitHub/Project pacman/SDL/SDL2_mixer-devel-2.8.0-mingw/SDL2_mixer-2.8.0/x86_64-w64-mingw32/lib" -L"C:/Users/SKY/Documents/GitHub/Project pacman/SDL/SDL2_image-devel-2.8.2-mingw/SDL2_image-2.8.2/x86_64-w64-mingw32/lib" -lmingw32 -lSDL2main -lSDL2 -lSDL2_test -lSDL2_image -lSDL2_ttf -lSDL2_mixer
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/10.3.0/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/10.3.0/include-fixed" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Users/SKY/Documents/SDL/SDL2/SDL2-2.30.1/x86_64-w64-mingw32/include/SDL2" -I"C:/Users/SKY/Documents/GitHub/Project pacman/SDL/SDL2-devel-2.30.1-mingw/SDL2-2.30.1/x86_64-w64-mingw32/include/SDL2" -I"C:/Users/SKY/Documents/GitHub/Project pacman/SDL/SDL2_ttf-devel-2.22.0-mingw/SDL2_ttf-2.22.0/x86_64-w64-mingw32/include/SDL2" -I"C:/Users/SKY/Documents/GitHub/Project pacman/SDL/SDL2_mixer-devel-2.8.0-mingw/SDL2_mixer-2.8.0/x86_64-w64-mingw32/include/SDL2" -I"C:/Users/SKY/Documents/GitHub/Project pacman/SDL/SDL2_image-devel-2.8.2-mingw/SDL2_image-2.8.2/x86_64-w64-mingw32/include/SDL2"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include/c++/10.3.0" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include/c++/10.3.0/x86_64-w64-mingw32" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include/c++/10.3.0/backward" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/10.3.0/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/10.3.0/include-fixed" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Users/SKY/Documents/GitHub/Project pacman/SDL/SDL2-devel-2.30.1-mingw/SDL2-2.30.1/x86_64-w64-mingw32/include/SDL2" -I"C:/Users/SKY/Documents/GitHub/Project pacman/SDL/SDL2_ttf-devel-2.22.0-mingw/SDL2_ttf-2.22.0/x86_64-w64-mingw32/include/SDL2" -I"C:/Users/SKY/Documents/GitHub/Project pacman/SDL/SDL2_mixer-devel-2.8.0-mingw/SDL2_mixer-2.8.0/x86_64-w64-mingw32/include/SDL2" -I"C:/Users/SKY/Documents/GitHub/Project pacman/SDL/SDL2_image-devel-2.8.2-mingw/SDL2_image-2.8.2/x86_64-w64-mingw32/include/SDL2"
+BIN      = SKY_pac_man.exe
+CXXFLAGS = $(CXXINCS) -O2
+ENCODINGS = -finput-charset=utf-8 -fexec-charset=windows-1252
+CFLAGS   = $(INCS) -O2
+RM       = del /q /f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o "$(BIN)" $(LIBS)
+
+pac_boy.o: pac_boy.c
+	$(CC) -c pac_boy.c -o pac_boy.o $(CFLAGS) 
